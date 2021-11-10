@@ -13,10 +13,8 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 const db=knex({
   client: 'pg',
   connection: {
-    host : 'postgresql-corrugated-83913', // = localhost
-    user : 'postgres',
-    password : '1234',
-    database : 'smartbrain'
+    host : process.env.DATABASE_URL,
+    ssl:true
   }
 });
 
